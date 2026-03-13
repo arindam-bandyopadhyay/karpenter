@@ -1,0 +1,26 @@
+# Karpenter Provider OCI
+#
+# Copyright (c) 2026 Oracle and/or its affiliates.
+# Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl/
+
+settings:
+  # -- Cluster compartment OCID
+  clusterCompartmentId: "<cluster-compartment-ocid>"
+  # -- Cluster's VCN compartment OCID
+  vcnCompartmentId: "<vcn-compartment-ocid>"
+  # -- Compartment OCID under which OKE pre-baked images are published
+  preBakedImageCompartmentId: "ocid1.compartment.oc1..aaaaaaaab4u67dhgtj5gpdpp3z42xqqsdnufxkatoild46u3hb67vzojfmzq"
+  # -- set this to true for a cluster run with OciIpNativeCni
+  ociVcnIpNative: false
+  # -- by default only IPv4, add IPv6 in needed
+  ipFamilies: [IPv4]
+  apiserverEndpoint: "<api-server-endpoint-private-ip>"
+
+imagePullSecrets: []
+# imagePullSecrets:
+#   - name: registry-secret
+
+image:
+  registry: ghcr.io
+  repositoryName: oracle/karpenter-provider-oci
+  # tag: v0.0.1-e5f96cc-local

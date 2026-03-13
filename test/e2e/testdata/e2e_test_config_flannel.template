@@ -1,0 +1,123 @@
+{
+  "OciAuthMethodForTest": "VAR_OCI_AUTH_METHOD_FOR_TEST",
+  "OciProfile": "DEFAULT",
+  "Namespace": "default",
+  "CompartmentID": "VAR_COMPARTMENT_ID",
+  "NodePool": {
+    "Name": "test-nodepool",
+    "Architecture": [
+      "amd64"
+    ],
+    "Os": [
+      "linux"
+    ],
+    "CapacityType": [
+      "on-demand"
+    ],
+    "InstanceTypes": [
+      "VM.Standard2.8",
+      "VM.Standard2.16",
+      "VM.Standard2.4"
+    ]
+  },
+  "OCINodeClass": {
+    "Name": "oci-nodeclass-test",
+    "ImageId": "VAR_IMAGE_ID",
+    "ImageDisplayName":"VAR_IMAGE_DISPLAY_NAME",
+    "ImageOsFilter": "Oracle Linux",
+    "ImageOsVersionFilter": "8",
+    "BootVolumeSizeInGB": 150,
+    "PVEncryptionInTransit": false,
+    "NodeCompartmentID": "VAR_COMPARTMENT_ID",
+    "SubnetID": "VAR_NODE_SUBNET1_ID",
+    "SubnetName": "VAR_NODE_SUBNET1_NAME",
+    "KmsKey": "VAR_KMS_KEY1_ID",
+    "KmsKeyName": "VAR_KMS_KEY1_NAME",
+    "UbuntuImagId": "VAR_UBUNTU_IMAGE_ID",
+    "CustomImagId": "VAR_CUSTOM_IMAGE_ID",
+    "Nsgs": [
+      "VAR_NSG1_ID"
+    ],
+    "NsgName": "VAR_NSG1_NAME",
+    "CapacityReservationName": "VAR_CAPACITY_RESERVATION1_NAME",
+    "CapacityReservationId": "VAR_CAPACITY_RESERVATION1_ID",
+    "ComputeClusterName": "VAR_COMPUTE_CLUSTER_NAME",
+    "ComputeClusterId": "VAR_COMPUTE_CLUSTER_ID",
+    "ShapeConfigs": [
+      {
+        "ocpus": 8,
+        "memoryInGbs": 64
+      },
+      {
+        "ocpus": 16,
+        "memoryInGbs": 128,
+        "baselineOcpuUtilization": "BASELINE_1_8"
+      }
+    ],
+    "SecondVnicConfigs": [],
+    "KubeletConfig": {
+      "maxPods": 100,
+      "podsPerCore": 1,
+      "systemReserved": {
+        "cpu": "100m",
+        "memory": "1G"
+      },
+      "kubeReserved": {
+        "cpu": "80m",
+        "memory": "1G"
+      }
+    },
+    "SshPubKey": "VAR_SSH_PUB_KEY",
+    "Metadata": {
+      "key1": "foo",
+      "key2": "bar"
+    },
+    "FreeformTags": {
+      "environment": "production",
+      "team": "devops"
+    },
+    "DefinedTags": {
+      "kpo-test-ns-1": {
+        "key1": "1234",
+        "key2": "kpo"
+      },
+      "kpo-test-ns-2": {
+        "key1": "67",
+        "key2": "kpo-test"
+      }
+    }
+  },
+  "TestDeployment": {
+    "Name": "busybox",
+    "Image": "VAR_TEST_DEPLOYMENT_IMAGE",
+    "CPUReq": "1",
+    "Replicas": 3
+  },
+  "DriftTestData": {
+    "DriftImageId": "VAR_DRIFT_IMAGE_ID",
+    "DriftImageDisplayName": "VAR_DRIFT_IMAGE_DISPLAY_NAME",
+    "DriftCompartment": "VAR_DRIFT_COMPARTMENT_ID",
+    "DriftKmsKey": "VAR_KMS_KEY2_ID",
+    "DriftKmsKeyName": "VAR_KMS_KEY2_NAME",
+    "DriftSubnetID": "VAR_NODE_SUBNET2_ID",
+    "DriftNsg": [
+      "VAR_NSG2_ID"
+    ],
+    "DriftShapeConfigs": [
+      {
+        "ocpus": 4,
+        "memoryInGbs": 32
+      },
+      {
+        "ocpus": 16,
+        "memoryInGbs": 128,
+        "baselineOcpuUtilization": "BASELINE_1_8"
+      }
+    ],
+    "DriftBootVolumeSizeInGB": 150,
+    "PVEncryptionInTransit": true,
+    "DriftCapacityReservationId": "VAR_CAPACITY_RESERVATION2_ID",
+    "DriftCapacityReservationName": "VAR_CAPACITY_RESERVATION2_NAME"
+  },
+  "OciVcnIpNative": false
+}

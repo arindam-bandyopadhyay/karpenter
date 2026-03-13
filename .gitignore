@@ -1,0 +1,81 @@
+##############################
+# Files/File-pattern to ignore
+##############################
+
+# Emacs, Vi and other editor temp files
+*~
+.#*
+
+# Intellij project settings folder
+.idea/
+.oca/
+
+# VSCode project settings folder
+.vscode/
+
+# Files and folders for Intellij and other IDEs
+bin/
+out/
+generated-srcs/
+.classpath
+.project
+.settings
+.factorypath
+*.ipr
+*.iws
+*.iml
+
+# Build destination for Maven
+target/
+
+abandoned/
+
+# Mac custom attributes file
+.DS_Store
+
+**/local/tls/*
+
+bldenv/
+input_ocibuild/
+output_ocibuild_compilesource/
+output_ocibuild_dockerize_api/
+output_ocibuild_dockerize_worker/
+
+**/.terraform
+**/*.tfstate
+**/*.tfstate.backup
+
+**/yarn.lock
+
+kqt.lg
+kqt/*
+**/kiab.lg
+/output_ocibuild/
+.gradle/
+scripts/*.tar
+
+# Shelper
+token.cache
+
+# PDE
+venv/
+kubeconfig**
+.kmi_image_id
+.deployment_id
+.instance_ip
+.image_id
+mp_stable_version.config
+cp_stable_version.config
+
+vendor/
+Dockerfile.cross
+
+#Go coverage file
+cover.out
+
+#Genarated files
+test/e2e/testdata/e2e_test_config_flannel.json
+test/e2e/testdata/e2e_test_config_npn.json
+test/e2e/testdata/e2e_test_helm_values_flannel.yaml
+test/e2e/testdata/e2e_test_helm_values_npn.yaml
+hack/crddoc-template/

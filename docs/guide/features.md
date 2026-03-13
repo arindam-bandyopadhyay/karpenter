@@ -1,0 +1,21 @@
+# Features
+
+- Implements the standard Karpenter cloud-provider interface (aligned with upstream **Karpenter v1.6.2**), enabling dynamic node scaling to meet workload scheduling demands and optimization requirements.
+- Supports drift detection to keep nodes launched by KPO up-to-date.
+- Provides opt-in and configurable node repair policies.
+- Supports a wide range of OCI cloud-specific features through `OCINodeClass`, including:
+    - Generic support of OCI compute VM and BM shapes and corresponding special scheduling labels
+    - Multiple shape configs based on a flexible shape
+    - Burstable instances
+    - Preemptible instances
+    - OKE prebaked images (Oracle Linux and Ubuntu)
+    - Boot volume customizations including KMS key, size, VPU, `pvEncryptionInTransit`
+    - IPv4 & IPv6 support on worker node VNICs
+    - Network security group support on worker node VNICs
+    - Secondary VNIC configurations (OciIpNativeCNI cluster only)
+    - Capacity reservation
+    - Cluster placement group
+    - Compute cluster
+    - Instance configurations such as metadata, freeform & defined tags, launch options, SSH authorized keys, etc.
+    - Kubelet configuration customizations
+    - Ability to auto-detect latest compatible OKE image with image filter

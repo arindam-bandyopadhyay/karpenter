@@ -1,0 +1,30 @@
+# Karpenter Provider OCI
+#
+# Copyright (c) 2026 Oracle and/or its affiliates.
+# Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl/
+
+replicaCount: 1
+image:
+  registry: VAR_IMAGE_REGISTRY
+  repositoryName: VAR_IMAGE_REPOSITORY_NAME
+  tag: VAR_IMAGE_TAG
+settings:
+  # -- Cluster compartment OCID
+  clusterCompartmentId: "VAR_COMPARTMENT_ID"
+  # -- Cluster's VCN compartment OCID
+  vcnCompartmentId: "VAR_COMPARTMENT_ID"
+  # -- set this to true for a cluster run with OciIpNativeCni
+  ociVcnIpNative: false
+  # -- by default only IPv4, add IPv6 in needed
+  ipFamilies: [IPv4]
+  apiserverEndpoint: VAR_FLANNEL_KUBEAPI_ENDPOINT_IP
+  flexibleShapeConfigs:
+    - ocpus: 2
+      memoryInGbs: 16
+      baselineOcpuUtilization: BASELINE_1_2
+    - ocpus: 4
+      memoryInGbs: 32
+#  repairPolicies:
+#    - conditionType: Ready
+#      conditionStatus: "False"
+#      tolerationDuration: 600000000000

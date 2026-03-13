@@ -20,11 +20,10 @@ Please describe the tests that you ran to verify your changes. Provide instructi
 - [ ] Test A
 - [ ] Test B
 
-**Test Configuration**:
-* Firmware version:
-* Hardware:
-* Toolchain:
-* SDK:
+- Kubernetes version:
+- OKE version:
+- Karpenter Provider OCI version:
+- Installation method (`helm`, manifests, local run):
 
 # Checklist:
 
